@@ -17,7 +17,7 @@ export default function FormInput({ type, placeholder, required, errors, name }:
         required={required}
       />
       {errors.map((error, index) => (
-        <span key={index} className="text-red-500">
+        <span key={index} className="text-red-500 flex flex-col">
           {error}
         </span>
       ))}
