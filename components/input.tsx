@@ -6,7 +6,6 @@ interface InputProps {
 }
 
 export default function Input({ name, errors = [], ...rest }: InputProps & InputHTMLAttributes<HTMLInputElement>) {
-  console.log(rest);
   return (
     <div>
       <input
