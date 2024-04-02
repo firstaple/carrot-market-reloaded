@@ -3,10 +3,10 @@
 import Button from "@/components/button";
 import Input from "@/components/input";
 import { useFormState } from "react-dom";
-import { smsVeriffication } from "./actions";
+import { smsLogin } from "./actions";
 
 export default function SMSLogin() {
-  const [state, dispatch] = useFormState(smsVeriffication, null);
+  const [state, dispatch] = useFormState(smsLogin, null);
   return (
     <div className="flex flex-col gap-10 px-6 py-8">
       <div className="flex flex-col gap-2 *:font-medium">
@@ -14,8 +14,8 @@ export default function SMSLogin() {
         <h2 className="text-xl">Verify your phone number.</h2>
       </div>
       <form action={dispatch} className="flex flex-col gap-3">
-        <Input name="phone" type="number" placeholder="Phone number" required />
-        <Input name="token" type="number" placeholder="Veriffication code" required />
+        <Input name="phone" type="text" placeholder="Phone number" required />
+        <Input name="token" type="number" placeholder="Veriffication code" required min={100000} max={999999} />
         <Button text="Verify" />
       </form>
     </div>
