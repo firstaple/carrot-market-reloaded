@@ -20,7 +20,15 @@ export default function SMSLogin() {
       </div>
       <form action={dispatch} className="flex flex-col gap-3">
         {state.token ? (
-          <Input name="token" type="number" placeholder="Veriffication code" required min={100000} max={999999} />
+          <Input
+            name="token"
+            type="number"
+            placeholder="Veriffication code"
+            required
+            min={100000}
+            max={999999}
+            errors={state.error?.formErrors}
+          />
         ) : (
           <Input name="phone" type="text" placeholder="Phone number" required errors={state.error?.formErrors} />
         )}
